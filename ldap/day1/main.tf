@@ -22,7 +22,7 @@ resource "google_compute_instance" "vm1" {
   machine_type            = var.vm1_machine_type
   tags                    = var.vm1_tags
   metadata = {
-    ssh-keys              = "${var.ssh_user}:${file(var.ssh_key)}"
+ #   ssh-keys              = "${var.ssh_user}:${file(var.ssh_key)}"
   }
 
   boot_disk {

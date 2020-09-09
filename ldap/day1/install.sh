@@ -10,8 +10,6 @@ sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
 sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif
 sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
 
-
-pass_user=123
 pass_admin=12345678
 pass_ssha=$(slappasswd -h {SSHA} -s $pass_admin)
 
@@ -21,7 +19,6 @@ changetype: modify
 add: olcRootPW
 olcRootPW: $pass_ssha
 EOF
-
 
 sudo ldapmodify -Y EXTERNAL -H ldapi:/// << EOF
 dn: olcDatabase={1}monitor,cn=config
@@ -100,7 +97,6 @@ shadowMax: -1
 shadowWarning: 0
 EOF
 
-
 sudo yum --enablerepo=epel install -y phpldapadmin
 sudo sed -i '397s|// ||' /etc/phpldapadmin/config.php
 sudo sed -i '398s|^|// |' /etc/phpldapadmin/config.php
@@ -119,5 +115,5 @@ Alias /ldapadmin /usr/share/phpldapadmin/htdocs
   </IfModule>
 </Directory>
 EOF
-
 sudo systemctl restart httpd
+sudo rm -f *ldif  

@@ -1,3 +1,3 @@
-# ELK Day 1
+# ELK Day 2
 
 [Screenshots](elk2.pdf)

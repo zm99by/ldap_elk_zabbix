@@ -18,8 +18,7 @@ type=rpm-md
 EOF
 
 sudo  yum install -y logstash
-sudo tee /etc/logstash/conf.d/tomcat.conf 
-<<EOF
+sudo tee /etc/logstash/conf.d/tomcat.conf <<EOF
 input {
   file {
     path => "/var/log/tomcat/*"

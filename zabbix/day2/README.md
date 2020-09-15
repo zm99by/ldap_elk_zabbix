@@ -1,3 +1,3 @@
-# ELK Day 1
+# Zabbix Day 2
 
 [Screenshots](zabbix2.pdf)

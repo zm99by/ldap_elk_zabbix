@@ -1,6 +1,4 @@
 #!/bin/bash
-
-sudo tee /etc/yum.repos.d/elasticsearch.repo  <<EOF
 [elasticsearch]
 name=Elasticsearch repository for 7.x packages
 baseurl=https://artifacts.elastic.co/packages/7.x/yum
@@ -36,3 +34,4 @@ sudo systemctl enable elasticsearch.service
 sudo systemctl restart elasticsearch.service
 sudo systemctl enable kibana.service
 sudo systemctl restart kibana
+## Test pycarm
